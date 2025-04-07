@@ -1,0 +1,52 @@
+
+#emp 테이블의 모든 데이터 검색하기
+select * from emp order by empno;
+---------------------------------------------------------------------------
+#emp 테이블의 job 검색하기
+select job from emp;
+
+select job distinct job from emp;
+---------------------------------------------------------------------------
+# emp 테이블의 sal 내림차순 정렬
+select *from emp order by sal desc;
+---------------------------------------------------------------------------
+# emp 테이블의 job 오름차순, sal 내림차순 정렬
+select *from emp order job, sal desc;
+---------------------------------------------------------------------------
+#emp 테이블 job 오름차순 sal 내림차순 정렬
+select ename, job, sal
+from emp
+order by job, sal desc;
+---------------------------------------------------------------------------
+#select ename 이름, job 직급, sal 급여
+select ename, job, sal
+from emp
+order by job, sal desc;
+---------------------------------------------------------------------------
+#직원수, 평균급여, 최고급여
+SELECT COUNT(*),AVG(sal).MAX(sal) FROM emp;
+
+SELECT COUNT(*) 직원수, AVG(sal), 평균, MAX(sal) 최대 FROM emp;
+---------------------------------------------------------------------------
+#where : 검색 조건
+#급여가 100보다 크고 400보다 작은 직원 검색(급여 내림차순)
+select * from emp
+where sal > 100 and sal < 400
+order by sal desc;
+---------------------------------------------------------------------------
+select ename, sal, deptno from emp where deptno in (10, 20, 40);
+select ename, sal, deptno from emp where deptno = 10 or deptno = 20 or deptno = 40;
+select ename, sal, deptno from emp where deptno != 30;
+select ename, sal from emp where sal between 300 and 500;
+select ename, sal from emp where sal >= 300 and sal <= 500;
+select ename from emp where ename like '박%';
+select ename from emp where ename like '%성%';
+select ename from emp where comm = null;
+select ename from emp where comm is null;
+select ename from emp where comm != null;
+select ename from emp where comm is not null;
+---------------------------------------------------------------------------
+#급여가 400 이하 또는 500
+select empno, sal from emp where not(sal > 400 and sal < 500) order by sal;
+select empno, sal from emp where sal <= 400 or sal >= 500 order by sal;
+select empno, sal from emp where not sal > 400 and sal < 500 order by sal;
