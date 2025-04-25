@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="java_sqlite/src"/>
+	<classpathentry kind="lib" path="java_sqlite/libs/sqlite-jdbc-3.49.1.0.jar"/>
+	<classpathentry kind="output" path="java_sqlite/bin"/>
+</classpath>
