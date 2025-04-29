@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+let count = 0;
+let timer;
+function msg(){
+	console.log("msg 함수 호출...");
+	count ++;
+	console.log("숫자"+ count);
+}
+function start(){
+	timer = setInterval("msg()", 1000);
+}
+function stop(){
+	clearInterval(timer);
+}
+
+</script>
+</head>
+<body>
+	<button onclick = "start()">start timer</button>
+	<button onclick = "stop()">stop timer</button>
+
+</body>
+</html>
